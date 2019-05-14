@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   # 资源地址链接
   s.source       = { :git => "https://github.com/EarthMass/IOAApiManager.git", :tag => "0.0.1" }
   # 文件
-  s.source_files  = 'HXNetUtil/IOAApiManager/*.{h,m}'
+  s.source_files  = 'HXNetUtil/IOAApiManager.{h,m}'
 
 
   # 是否支持arc
