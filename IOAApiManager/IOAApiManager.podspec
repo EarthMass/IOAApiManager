@@ -30,15 +30,16 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   # 资源地址链接
-  s.source       = { :git => "https://github.com/EarthMass/IOAApiManager.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/EarthMass/IOAApiManager.git", :tag => "#{s.version}" }
   # 文件
-  s.source_files  = 'IOAApiManager/IOAApiManager.{h,m}'
-
+  s.source_files  = "IOAApiManager/IOAApiManager/IOAApiManager/*.{h,m}"
+  s.public_header_files = "IOAApiManager/IOAApiManager/IOAApiManager/IOAApiManager.h"
 
   # 是否支持arc
   s.requires_arc = true
 
-  s.frameworks = 'UIKit',"Foundation"
+  s.frameworks = "UIKit" , "Foundation"
+
 
   # 所用到 cocoapods 中的其他类库
   s.dependency 'MJExtension' ##数据解析

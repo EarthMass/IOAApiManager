@@ -18,7 +18,7 @@
 		1376D4F121F1A37900A24345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4F021F1A37900A24345 /* Assets.xcassets */; };
 		1376D4F421F1A37900A24345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4F221F1A37900A24345 /* LaunchScreen.storyboard */; };
 		1376D4F721F1A37900A24345 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4F621F1A37900A24345 /* main.m */; };
-		1376D50821F1A5BA00A24345 /* IOAApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiManager.m */; };
+		1376D50821F1A5BA00A24345 /* IOAApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */; };
 		1376D50921F1A5BA00A24345 /* IOANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */; };
 		1376D50A21F1A5BA00A24345 /* IOAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50021F1A5BA00A24345 /* IOAResponse.m */; };
 		1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50621F1A5BA00A24345 /* IOARequest.m */; };
@@ -34,6 +34,7 @@
 		133CBC6521F86C6C008722F1 /* 666.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 666.jpg; sourceTree = "<group>"; };
 		13504C9C228ABBC900521D56 /* AFJSONResponseSerializer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFJSONResponseSerializer+Addition.h"; sourceTree = "<group>"; };
 		13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFJSONResponseSerializer+Addition.m"; sourceTree = "<group>"; };
+		13504C9F228B088500521D56 /* IOAApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOAApiManager.h; sourceTree = "<group>"; };
 		1376D4E421F1A37500A24345 /* IOAApiManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOAApiManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1376D4E721F1A37500A24345 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1376D4E821F1A37500A24345 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,11 +45,11 @@
 		1376D4F321F1A37900A24345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1376D4F521F1A37900A24345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1376D4F621F1A37900A24345 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1376D4FE21F1A5BA00A24345 /* IOAApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOAApiManager.m; sourceTree = "<group>"; };
+		1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOAApiHelper.m; sourceTree = "<group>"; };
 		1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOANetworkManager.m; sourceTree = "<group>"; };
 		1376D50021F1A5BA00A24345 /* IOAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOAResponse.m; sourceTree = "<group>"; };
 		1376D50121F1A5BA00A24345 /* IOARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOARequest.h; sourceTree = "<group>"; };
-		1376D50321F1A5BA00A24345 /* IOAApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAApiManager.h; sourceTree = "<group>"; };
+		1376D50321F1A5BA00A24345 /* IOAApiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAApiHelper.h; sourceTree = "<group>"; };
 		1376D50421F1A5BA00A24345 /* IOAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAResponse.h; sourceTree = "<group>"; };
 		1376D50521F1A5BA00A24345 /* IOANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOANetworkManager.h; sourceTree = "<group>"; };
 		1376D50621F1A5BA00A24345 /* IOARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOARequest.m; sourceTree = "<group>"; };
@@ -125,14 +126,15 @@
 			children = (
 				13504C9C228ABBC900521D56 /* AFJSONResponseSerializer+Addition.h */,
 				13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */,
-				1376D50321F1A5BA00A24345 /* IOAApiManager.h */,
-				1376D4FE21F1A5BA00A24345 /* IOAApiManager.m */,
+				1376D50321F1A5BA00A24345 /* IOAApiHelper.h */,
+				1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */,
 				1376D50521F1A5BA00A24345 /* IOANetworkManager.h */,
 				1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */,
 				1376D50121F1A5BA00A24345 /* IOARequest.h */,
 				1376D50621F1A5BA00A24345 /* IOARequest.m */,
 				1376D50421F1A5BA00A24345 /* IOAResponse.h */,
 				1376D50021F1A5BA00A24345 /* IOAResponse.m */,
+				13504C9F228B088500521D56 /* IOAApiManager.h */,
 			);
 			path = IOAApiManager;
 			sourceTree = "<group>";
@@ -267,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1376D50821F1A5BA00A24345 /* IOAApiManager.m in Sources */,
+				1376D50821F1A5BA00A24345 /* IOAApiHelper.m in Sources */,
 				13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */,
 				133CBC6121F7F4B1008722F1 /* Foundation+Log.m in Sources */,
 				1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */,

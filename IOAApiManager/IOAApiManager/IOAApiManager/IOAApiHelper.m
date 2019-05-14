@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, ServerType) {
     kSeverTypeRelease   //发布版服务器地址
 };
 
-@implementation IOAApiManager
+@implementation IOAApiHelper
 
 + (void)configNetworkWithBaseUrl:(NSString *)baseUrl {
     
