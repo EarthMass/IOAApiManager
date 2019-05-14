@@ -25,7 +25,7 @@
           初始化操作
           */
          //开启 网络监控， 有监控时间 请求 需要 隔一小段时间才能正常
-         [IOAApiManager startNetworkMonitoring:^{
+         [IOAApiHelper startNetworkMonitoring:^{
              //完成相关操作，注销通知
              [[NSNotificationCenter defaultCenter] removeObserver:observer];
          }];

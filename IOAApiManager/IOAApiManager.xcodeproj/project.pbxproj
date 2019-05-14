@@ -124,6 +124,7 @@
 		1376D4FD21F1A5BA00A24345 /* IOAApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				13504C9F228B088500521D56 /* IOAApiManager.h */,
 				13504C9C228ABBC900521D56 /* AFJSONResponseSerializer+Addition.h */,
 				13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */,
 				1376D50321F1A5BA00A24345 /* IOAApiHelper.h */,
@@ -134,7 +135,6 @@
 				1376D50621F1A5BA00A24345 /* IOARequest.m */,
 				1376D50421F1A5BA00A24345 /* IOAResponse.h */,
 				1376D50021F1A5BA00A24345 /* IOAResponse.m */,
-				13504C9F228B088500521D56 /* IOAApiManager.h */,
 			);
 			path = IOAApiManager;
 			sourceTree = "<group>";

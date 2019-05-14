@@ -1,12 +1,12 @@
 //
-//  IOAApiManager.m
+//  IOAApiHelper.m
 //  IOAMall
 //
 //  Created by Mac on 2018/1/31.
 //  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import "IOAApiManager.h"
+#import "IOAApiHelper.h"
 
 typedef NS_ENUM(NSUInteger, ServerType) {
     kSeverTypeDev,     // 开发服务器地址

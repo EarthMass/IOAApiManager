@@ -25,7 +25,7 @@
     //https 配置，token 验证，需要先保存[saveToken]。
     
     //配置 网络地址
-    [IOAApiManager configNetworkWithBaseUrl:@"xxxxx"];
+    [IOAApiHelper configNetworkWithBaseUrl:@"xxxxx"];
     
 
 #pragma mark- 三种方式 请求，前两需要继承自IOARequest 最后项 直接 调用

@@ -7,7 +7,7 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
-#import "IOAApiManager.h"
+#import "IOAApiHelper.h"
 #import "IOAResponse.h"
 
 //pod 'MJExtension' ##数据解析

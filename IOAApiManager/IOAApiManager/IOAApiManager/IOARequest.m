@@ -177,7 +177,7 @@
         [IOARequest showLoading:@"加载中..."];
     }
 
-    if (![IOAApiManager isNetworkReachable] && [IOAApiManager getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
+    if (![IOAApiHelper isNetworkReachable] && [IOAApiHelper getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
         self.responseStatusType = kResponseStatusTypeNoNetwork;
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork; // 没网络
         self.serverResponseMessage = [self.class responseMsgWithStatus:self.responseStatusType];
@@ -251,7 +251,7 @@
         [IOARequest showLoading:@"加载中..."];
     }
     
-    if (![IOAApiManager isNetworkReachable] && [IOAApiManager getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
+    if (![IOAApiHelper isNetworkReachable] && [IOAApiHelper getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
         self.responseStatusType = kResponseStatusTypeNoNetwork; // 没网络
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork;
         self.serverResponseMessage = [self.class responseMsgWithStatus:self.responseStatusType];
@@ -319,7 +319,7 @@
         [IOARequest showLoading:@"加载中..."];
     }
     
-    if (![IOAApiManager isNetworkReachable] && [IOAApiManager getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
+    if (![IOAApiHelper isNetworkReachable] && [IOAApiHelper getNetworkStatus] != AFNetworkReachabilityStatusUnknown) {
         
         self.responseStatusType = kResponseStatusTypeNoNetwork; // 没网络
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork;
@@ -528,7 +528,7 @@
     
     if ([self needAuthorization]) {
 
-        NSString *token = [IOAApiManager getToken];
+        NSString *token = [IOAApiHelper getToken];
         
     
         if (token.length == 0) {
