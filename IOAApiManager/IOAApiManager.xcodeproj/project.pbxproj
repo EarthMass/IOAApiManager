@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,11 +22,10 @@
 		1376D50921F1A5BA00A24345 /* IOANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */; };
 		1376D50A21F1A5BA00A24345 /* IOAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50021F1A5BA00A24345 /* IOAResponse.m */; };
 		1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50621F1A5BA00A24345 /* IOARequest.m */; };
-		2792D7B89FCD8C77243C6B92 /* libPods-HXNetUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0660560CE5FB112FD7D24A3C /* libPods-HXNetUtil.a */; };
+		CF2A8365FADC1A41CE395D99 /* libPods-IOAApiManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7F9A1CA542D13EA4DD0B1D /* libPods-IOAApiManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0660560CE5FB112FD7D24A3C /* libPods-HXNetUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HXNetUtil.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		133CBC5D21F6BF95008722F1 /* TestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestApi.h; sourceTree = "<group>"; };
 		133CBC5E21F6BF95008722F1 /* TestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestApi.m; sourceTree = "<group>"; };
 		133CBC6021F7F4B1008722F1 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -35,7 +34,7 @@
 		133CBC6521F86C6C008722F1 /* 666.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 666.jpg; sourceTree = "<group>"; };
 		13504C9C228ABBC900521D56 /* AFJSONResponseSerializer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFJSONResponseSerializer+Addition.h"; sourceTree = "<group>"; };
 		13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFJSONResponseSerializer+Addition.m"; sourceTree = "<group>"; };
-		1376D4E421F1A37500A24345 /* HXNetUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HXNetUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1376D4E421F1A37500A24345 /* IOAApiManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOAApiManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1376D4E721F1A37500A24345 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1376D4E821F1A37500A24345 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1376D4EA21F1A37500A24345 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -53,8 +52,11 @@
 		1376D50421F1A5BA00A24345 /* IOAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAResponse.h; sourceTree = "<group>"; };
 		1376D50521F1A5BA00A24345 /* IOANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOANetworkManager.h; sourceTree = "<group>"; };
 		1376D50621F1A5BA00A24345 /* IOARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOARequest.m; sourceTree = "<group>"; };
+		223CB5903FD3E8E9A9A29B79 /* Pods-IOAApiManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOAApiManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager.release.xcconfig"; sourceTree = "<group>"; };
 		261281977ECFA766883B0897 /* Pods-HXNetUtil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetUtil.release.xcconfig"; path = "Pods/Target Support Files/Pods-HXNetUtil/Pods-HXNetUtil.release.xcconfig"; sourceTree = "<group>"; };
+		92AB5DC01B8D05D283DD07F1 /* Pods-IOAApiManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOAApiManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager.debug.xcconfig"; sourceTree = "<group>"; };
 		D7E7059E0B74837C3E254E3D /* Pods-HXNetUtil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetUtil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HXNetUtil/Pods-HXNetUtil.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7F9A1CA542D13EA4DD0B1D /* libPods-IOAApiManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOAApiManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2792D7B89FCD8C77243C6B92 /* libPods-HXNetUtil.a in Frameworks */,
+				CF2A8365FADC1A41CE395D99 /* libPods-IOAApiManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +86,7 @@
 		1376D4DB21F1A37500A24345 = {
 			isa = PBXGroup;
 			children = (
-				1376D4E621F1A37500A24345 /* HXNetUtil */,
+				1376D4E621F1A37500A24345 /* IOAApiManager */,
 				1376D4E521F1A37500A24345 /* Products */,
 				93512DB08DBF7163A25017D3 /* Pods */,
 				26D916A67319AFBF8D736A40 /* Frameworks */,
@@ -94,12 +96,12 @@
 		1376D4E521F1A37500A24345 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1376D4E421F1A37500A24345 /* HXNetUtil.app */,
+				1376D4E421F1A37500A24345 /* IOAApiManager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1376D4E621F1A37500A24345 /* HXNetUtil */ = {
+		1376D4E621F1A37500A24345 /* IOAApiManager */ = {
 			isa = PBXGroup;
 			children = (
 				133CBC5C21F6BF7E008722F1 /* TestApi */,
@@ -115,7 +117,7 @@
 				1376D4F521F1A37900A24345 /* Info.plist */,
 				1376D4F621F1A37900A24345 /* main.m */,
 			);
-			path = HXNetUtil;
+			path = IOAApiManager;
 			sourceTree = "<group>";
 		};
 		1376D4FD21F1A5BA00A24345 /* IOAApiManager */ = {
@@ -138,7 +140,7 @@
 		26D916A67319AFBF8D736A40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0660560CE5FB112FD7D24A3C /* libPods-HXNetUtil.a */,
+				DB7F9A1CA542D13EA4DD0B1D /* libPods-IOAApiManager.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +150,8 @@
 			children = (
 				D7E7059E0B74837C3E254E3D /* Pods-HXNetUtil.debug.xcconfig */,
 				261281977ECFA766883B0897 /* Pods-HXNetUtil.release.xcconfig */,
+				92AB5DC01B8D05D283DD07F1 /* Pods-IOAApiManager.debug.xcconfig */,
+				223CB5903FD3E8E9A9A29B79 /* Pods-IOAApiManager.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -155,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1376D4E321F1A37500A24345 /* HXNetUtil */ = {
+		1376D4E321F1A37500A24345 /* IOAApiManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1376D4FA21F1A37900A24345 /* Build configuration list for PBXNativeTarget "HXNetUtil" */;
+			buildConfigurationList = 1376D4FA21F1A37900A24345 /* Build configuration list for PBXNativeTarget "IOAApiManager" */;
 			buildPhases = (
 				8DA772444B9634886E37487D /* [CP] Check Pods Manifest.lock */,
 				1376D4E021F1A37500A24345 /* Sources */,
@@ -169,9 +173,9 @@
 			);
 			dependencies = (
 			);
-			name = HXNetUtil;
+			name = IOAApiManager;
 			productName = HXNetUtil;
-			productReference = 1376D4E421F1A37500A24345 /* HXNetUtil.app */;
+			productReference = 1376D4E421F1A37500A24345 /* IOAApiManager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1376D4DF21F1A37500A24345 /* Build configuration list for PBXProject "HXNetUtil" */;
+			buildConfigurationList = 1376D4DF21F1A37500A24345 /* Build configuration list for PBXProject "IOAApiManager" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -201,7 +205,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1376D4E321F1A37500A24345 /* HXNetUtil */,
+				1376D4E321F1A37500A24345 /* IOAApiManager */,
 			);
 		};
 /* End PBXProject section */
@@ -226,17 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HXNetUtil/Pods-HXNetUtil-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HXNetUtil/Pods-HXNetUtil-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8DA772444B9634886E37487D /* [CP] Check Pods Manifest.lock */ = {
@@ -250,7 +253,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HXNetUtil-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IOAApiManager-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,12 +415,12 @@
 		};
 		1376D4FB21F1A37900A24345 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7E7059E0B74837C3E254E3D /* Pods-HXNetUtil.debug.xcconfig */;
+			baseConfigurationReference = 92AB5DC01B8D05D283DD07F1 /* Pods-IOAApiManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HXNetUtil/Info.plist;
+				INFOPLIST_FILE = IOAApiManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,12 +435,12 @@
 		};
 		1376D4FC21F1A37900A24345 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 261281977ECFA766883B0897 /* Pods-HXNetUtil.release.xcconfig */;
+			baseConfigurationReference = 223CB5903FD3E8E9A9A29B79 /* Pods-IOAApiManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HXNetUtil/Info.plist;
+				INFOPLIST_FILE = IOAApiManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1376D4DF21F1A37500A24345 /* Build configuration list for PBXProject "HXNetUtil" */ = {
+		1376D4DF21F1A37500A24345 /* Build configuration list for PBXProject "IOAApiManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1376D4F821F1A37900A24345 /* Debug */,
@@ -462,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1376D4FA21F1A37900A24345 /* Build configuration list for PBXNativeTarget "HXNetUtil" */ = {
+		1376D4FA21F1A37900A24345 /* Build configuration list for PBXNativeTarget "IOAApiManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1376D4FB21F1A37900A24345 /* Debug */,

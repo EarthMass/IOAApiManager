@@ -17,7 +17,7 @@ PODS:
   - HXProgressHUD (1.0.3):
     - SVProgressHUD
     - Toast (~> 3.1.0)
-  - MJExtension (3.0.15.1)
+  - MJExtension (3.0.17)
   - SVProgressHUD (2.2.5)
   - Toast (3.1.0)
   - YTKNetwork (2.0.4):
@@ -26,10 +26,10 @@ PODS:
 DEPENDENCIES:
   - HXProgressHUD
   - MJExtension
-  - YTKNetwork
+  - YTKNetwork (= 2.0.4)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - HXProgressHUD
     - MJExtension
@@ -40,11 +40,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   HXProgressHUD: cdeb467615251a558521bf2878a0bc06b8699c6f
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 0292ab98804513bd46b947e385bfc5e1ecf8da8b
+PODFILE CHECKSUM: 5e8cb7b1b2c30a0ced4a1bad63dbc5ba8ee7e4dc
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.0.beta.3

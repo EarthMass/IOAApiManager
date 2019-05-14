@@ -1,7 +1,7 @@
 
 platform :ios ,'8.0'
 
-target :'HXNetUtil' do
+target :'IOAApiManager' do
 
 pod 'MJExtension' ##数据解析
 pod 'YTKNetwork','2.0.4'  ##网络
