@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface IOANetworkManager : NSObject
 

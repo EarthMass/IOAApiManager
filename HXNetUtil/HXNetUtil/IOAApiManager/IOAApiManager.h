@@ -6,8 +6,9 @@
 //  Copyright © 2018年 Mac. All rights reserved.
 //
 
-#import <YTKNetwork.h>
-#import <AFNetworking.h>
+#import <YTKNetwork/YTKNetwork.h>
+#import <AFNetworking/AFNetworking.h>
+
 
 @interface IOAApiManager : NSObject
 //base in YTKNetwork

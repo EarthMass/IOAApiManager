@@ -38,6 +38,8 @@ Pod::Spec.new do |s|
   # 是否支持arc
   s.requires_arc = true
 
+  s.frameworks = 'UIKit',"Foundation"
+
   # 所用到 cocoapods 中的其他类库
   s.dependency 'MJExtension' ##数据解析
   s.dependency 'YTKNetwork','2.0.4'  ##网络
