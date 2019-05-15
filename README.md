@@ -1,6 +1,7 @@
 # IOAApiManager
 Easy to use network operate,网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。
 
+
 # 特点
 * 使用  特点 
 * 四种使用  直接调用，block, delegate，以及YTKNetwork单接口一个一个写
@@ -13,7 +14,19 @@ Easy to use network operate,网络请求框架对 YTKNetwork二次封装，使�
 * 提示alert 可自己配置配置 使用不同的库
 * 使用时 针对不同的 url, 继承一个IOARequest类出来处理
 
-#使用[详情看demo]
+# 使用[详情看demo]
+
+## pod 集成 ios8+
+```
+pod 'IOAApiManager'
+```
+## 手动集成，直接把代码拖到项目中 添加依赖
+```
+pod 'MJExtension' ##数据解析
+pod 'YTKNetwork','2.0.4'  ##网络
+pod 'HXProgressHUD' ##提示
+
+```
 ```
 #import "IOAApiManager/IOAApiManager.h"
 
