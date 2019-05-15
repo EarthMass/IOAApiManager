@@ -32,19 +32,36 @@ Pod::Spec.new do |s|
   # 资源地址链接
   s.source       = { :git => "https://github.com/EarthMass/IOAApiManager.git", :tag => "#{s.version}" }
   # 文件
-  s.source_files  = "IOAApiManager/IOAApiManager/IOAApiManager/*.{h,m}"
-  s.public_header_files = "IOAApiManager/IOAApiManager/IOAApiManager/IOAApiManager.h"
+  s.source_files  = "IOAApiManagerDemo/**/IOAApiManager.h"
+  s.public_header_files = "IOAApiManagerDemo/**/IOAApiManager.h"
 
   # 是否支持arc
   s.requires_arc = true
 
+
   s.frameworks = "UIKit" , "Foundation"
+
+  s.subspec 'IOARequestAndResponse' do |sub1|
+    sub1.source_files  = "IOAApiManagerDemo/**/IOA{Request,Response,ApiHelper,NetworkManager}.{h,m}"
+    sub1.public_header_files = "IOAApiManagerDemo/**/IOA{Request,Response,ApiHelper,NetworkManager}.h"
+
+  end
+
+  s.subspec 'IOACategary' do |sub2|
+    sub2.source_files  = "IOAApiManagerDemo/**/AFJSONResponseSerializer+Addition.{h,m}"
+    sub2.public_header_files = "IOAApiManagerDemo/**/AFJSONResponseSerializer+Addition.h"
+  end
+
 
 
   # 所用到 cocoapods 中的其他类库
   s.dependency 'MJExtension' ##数据解析
   s.dependency 'YTKNetwork','2.0.4'  ##网络
   s.dependency 'HXProgressHUD' ##提示
+
+
+
+
 
 end
 

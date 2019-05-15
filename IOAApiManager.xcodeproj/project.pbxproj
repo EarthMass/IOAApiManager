@@ -12,13 +12,13 @@
 		133CBC6421F86789008722F1 /* UploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CBC6321F86789008722F1 /* UploadApi.m */; };
 		133CBC6621F86C6C008722F1 /* 666.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 133CBC6521F86C6C008722F1 /* 666.jpg */; };
 		13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */; };
+		13504CA8228BC62100521D56 /* IOAApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */; };
 		1376D4E921F1A37500A24345 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4E821F1A37500A24345 /* AppDelegate.m */; };
 		1376D4EC21F1A37500A24345 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4EB21F1A37500A24345 /* ViewController.m */; };
 		1376D4EF21F1A37500A24345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4ED21F1A37500A24345 /* Main.storyboard */; };
 		1376D4F121F1A37900A24345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4F021F1A37900A24345 /* Assets.xcassets */; };
 		1376D4F421F1A37900A24345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4F221F1A37900A24345 /* LaunchScreen.storyboard */; };
 		1376D4F721F1A37900A24345 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4F621F1A37900A24345 /* main.m */; };
-		1376D50821F1A5BA00A24345 /* IOAApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */; };
 		1376D50921F1A5BA00A24345 /* IOANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */; };
 		1376D50A21F1A5BA00A24345 /* IOAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50021F1A5BA00A24345 /* IOAResponse.m */; };
 		1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50621F1A5BA00A24345 /* IOARequest.m */; };
@@ -87,7 +87,7 @@
 		1376D4DB21F1A37500A24345 = {
 			isa = PBXGroup;
 			children = (
-				1376D4E621F1A37500A24345 /* IOAApiManager */,
+				1376D4E621F1A37500A24345 /* IOAApiManagerDemo */,
 				1376D4E521F1A37500A24345 /* Products */,
 				93512DB08DBF7163A25017D3 /* Pods */,
 				26D916A67319AFBF8D736A40 /* Frameworks */,
@@ -102,7 +102,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1376D4E621F1A37500A24345 /* IOAApiManager */ = {
+		1376D4E621F1A37500A24345 /* IOAApiManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
 				133CBC5C21F6BF7E008722F1 /* TestApi */,
@@ -118,7 +118,7 @@
 				1376D4F521F1A37900A24345 /* Info.plist */,
 				1376D4F621F1A37900A24345 /* main.m */,
 			);
-			path = IOAApiManager;
+			path = IOAApiManagerDemo;
 			sourceTree = "<group>";
 		};
 		1376D4FD21F1A5BA00A24345 /* IOAApiManager */ = {
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1376D50821F1A5BA00A24345 /* IOAApiHelper.m in Sources */,
+				13504CA8228BC62100521D56 /* IOAApiHelper.m in Sources */,
 				13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */,
 				133CBC6121F7F4B1008722F1 /* Foundation+Log.m in Sources */,
 				1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */,
@@ -422,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = IOAApiManager/Info.plist;
+				INFOPLIST_FILE = IOAApiManagerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = IOAApiManager/Info.plist;
+				INFOPLIST_FILE = IOAApiManagerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
