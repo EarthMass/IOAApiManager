@@ -12,7 +12,7 @@
 		133CBC6421F86789008722F1 /* UploadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CBC6321F86789008722F1 /* UploadApi.m */; };
 		133CBC6621F86C6C008722F1 /* 666.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 133CBC6521F86C6C008722F1 /* 666.jpg */; };
 		13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */; };
-		13504CA8228BC62100521D56 /* IOAApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */; };
+		13723BEA22A623D500D61510 /* IOAApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */; };
 		1376D4E921F1A37500A24345 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4E821F1A37500A24345 /* AppDelegate.m */; };
 		1376D4EC21F1A37500A24345 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4EB21F1A37500A24345 /* ViewController.m */; };
 		1376D4EF21F1A37500A24345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1376D4ED21F1A37500A24345 /* Main.storyboard */; };
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13504CA8228BC62100521D56 /* IOAApiHelper.m in Sources */,
+				13723BEA22A623D500D61510 /* IOAApiHelper.m in Sources */,
 				13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */,
 				133CBC6121F7F4B1008722F1 /* Foundation+Log.m in Sources */,
 				1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */,

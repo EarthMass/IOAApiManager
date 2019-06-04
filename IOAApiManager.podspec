@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.summary      = "网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。"
   s.description  = <<-DESC
                       网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。 Easy
+                      
                    DESC
 
   # 项目首页                 
@@ -32,8 +33,7 @@ Pod::Spec.new do |s|
   # 资源地址链接
   s.source       = { :git => "https://github.com/EarthMass/IOAApiManager.git", :tag => "#{s.version}" }
   # 文件
-  # s.public_header_files = "IOAApiManagerDemo/**/IOAApiManager.h"
-  s.source_files  = "IOAApiManagerDemo/**/IOAApiManager.{h,m}"
+  s.source_files  = "IOAApiManagerDemo/**/IOAApiManager/*.{h,m}"
 
 
   # 是否支持arc
