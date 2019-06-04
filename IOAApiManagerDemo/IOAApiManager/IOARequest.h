@@ -61,10 +61,21 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 
 @property (nonatomic, assign) BOOL success;
 
+
 /**
  回调实体类名称，根据返回的数据格式定制 model
  */
-@property (nonatomic,readonly, copy) NSString * respEntityName;
+@property (nonatomic, copy) NSString * respEntityName;
+
+
+#pragma mark- Get Value
+- (NSInteger)serverResponseStatusCode;
+- (NSInteger)requestResponseStatusCode;
+- (NSString *)serverResponseMessage;
+- (id)requestModel;
+- (NSDictionary *)requestDic;
+- (YTKRequestMethod)requestType;
+- (NSString *)uri;
 
 #pragma mark- 定制提示框 提示统一处理[便于快速切换提示库] 一般不需要重写
 + (void)showToast:(NSString *)msg;
@@ -107,7 +118,7 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 
 
 //屏蔽原本的请求
-- (void)startWithCompletionBlockWithSuccess:(YTKRequestCompletionBlock)success
+-(void)startWithCompletionBlockWithSuccess:(YTKRequestCompletionBlock)success
                                     failure:(YTKRequestCompletionBlock)failure NS_UNAVAILABLE;
 
 #pragma mark Block 方式

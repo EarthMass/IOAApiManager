@@ -84,6 +84,28 @@
 @end
 
 @implementation IOARequest
+#pragma mark- Get Value
+- (NSInteger)serverResponseStatusCode {
+    return _serverResponseStatusCode;
+}
+- (NSInteger)requestResponseStatusCode {
+    return _requestResponseStatusCode;
+}
+- (NSString *)serverResponseMessage {
+    return _serverResponseMessage;
+}
+- (id)requestModel {
+    return _requestModel;
+}
+- (NSDictionary *)requestDic {
+    return _requestDic;
+}
+- (YTKRequestMethod)requestType {
+    return _requestType;
+}
+- (NSString *)uri {
+    return _uri;
+}
 
 #pragma mark- 定制提示框 提示统一处理[便于快速切换库]
 + (void)showToast:(NSString *)msg {
