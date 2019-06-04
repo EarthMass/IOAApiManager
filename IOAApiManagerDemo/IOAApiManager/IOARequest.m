@@ -101,7 +101,7 @@
     return _requestDic;
 }
 - (YTKRequestMethod)requestType {
-    return _requestType;
+    return _requestModel;
 }
 - (NSString *)uri {
     return _uri;

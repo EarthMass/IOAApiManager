@@ -61,6 +61,13 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 
 @property (nonatomic, assign) BOOL success;
 
+
+/**
+ 回调实体类名称，根据返回的数据格式定制 model
+ */
+@property (nonatomic,readonly, copy) NSString * respEntityName;
+
+
 #pragma mark- Get Value
 - (NSInteger)serverResponseStatusCode;
 - (NSInteger)requestResponseStatusCode;
