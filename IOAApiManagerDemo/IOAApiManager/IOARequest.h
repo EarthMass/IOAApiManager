@@ -69,6 +69,7 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 
 
 #pragma mark- Get Value
+- (BOOL)isBlockInit;
 - (NSInteger)serverResponseStatusCode;
 - (NSInteger)requestResponseStatusCode;
 - (NSString *)serverResponseMessage;

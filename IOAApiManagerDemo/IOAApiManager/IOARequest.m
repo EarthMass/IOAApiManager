@@ -85,6 +85,9 @@
 
 @implementation IOARequest
 #pragma mark- Get Value
+- (BOOL)isBlockInit {
+    return _isBlockInit;
+}
 - (NSInteger)serverResponseStatusCode {
     return _serverResponseStatusCode;
 }
@@ -101,7 +104,7 @@
     return _requestDic;
 }
 - (YTKRequestMethod)requestType {
-    return _requestModel;
+    return _requestType;
 }
 - (NSString *)uri {
     return _uri;
