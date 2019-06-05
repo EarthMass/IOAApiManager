@@ -9,10 +9,8 @@
 #import <YTKNetwork/YTKNetwork.h>
 #import "IOAApiHelper.h"
 #import "IOAResponse.h"
+#import "IOAResultKeyModel.h"
 
-//pod 'MJExtension' ##数据解析
-//pod 'YTKNetwork'  ##网络
-//pod 'HXProgressHUD'
 #import <HXProgressHUD/HXProgress.h>
 #import <MJExtension/MJExtension.h>
 

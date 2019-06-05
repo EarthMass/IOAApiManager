@@ -22,6 +22,8 @@
 		1376D50921F1A5BA00A24345 /* IOANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */; };
 		1376D50A21F1A5BA00A24345 /* IOAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50021F1A5BA00A24345 /* IOAResponse.m */; };
 		1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376D50621F1A5BA00A24345 /* IOARequest.m */; };
+		13DF239122A7CA9700FCCF0E /* IOAResultKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DF239022A7CA9700FCCF0E /* IOAResultKeyModel.m */; };
+		13DF239422A7CB2F00FCCF0E /* IOARequestCus.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DF239322A7CB2F00FCCF0E /* IOARequestCus.m */; };
 		CF2A8365FADC1A41CE395D99 /* libPods-IOAApiManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7F9A1CA542D13EA4DD0B1D /* libPods-IOAApiManager.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,10 @@
 		1376D50421F1A5BA00A24345 /* IOAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAResponse.h; sourceTree = "<group>"; };
 		1376D50521F1A5BA00A24345 /* IOANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOANetworkManager.h; sourceTree = "<group>"; };
 		1376D50621F1A5BA00A24345 /* IOARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOARequest.m; sourceTree = "<group>"; };
+		13DF238F22A7CA9700FCCF0E /* IOAResultKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAResultKeyModel.h; sourceTree = "<group>"; };
+		13DF239022A7CA9700FCCF0E /* IOAResultKeyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOAResultKeyModel.m; sourceTree = "<group>"; };
+		13DF239222A7CB2E00FCCF0E /* IOARequestCus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOARequestCus.h; sourceTree = "<group>"; };
+		13DF239322A7CB2F00FCCF0E /* IOARequestCus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOARequestCus.m; sourceTree = "<group>"; };
 		223CB5903FD3E8E9A9A29B79 /* Pods-IOAApiManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOAApiManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager.release.xcconfig"; sourceTree = "<group>"; };
 		261281977ECFA766883B0897 /* Pods-HXNetUtil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetUtil.release.xcconfig"; path = "Pods/Target Support Files/Pods-HXNetUtil/Pods-HXNetUtil.release.xcconfig"; sourceTree = "<group>"; };
 		92AB5DC01B8D05D283DD07F1 /* Pods-IOAApiManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOAApiManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOAApiManager/Pods-IOAApiManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		133CBC5C21F6BF7E008722F1 /* TestApi */ = {
 			isa = PBXGroup;
 			children = (
+				13DF239222A7CB2E00FCCF0E /* IOARequestCus.h */,
+				13DF239322A7CB2F00FCCF0E /* IOARequestCus.m */,
 				133CBC6521F86C6C008722F1 /* 666.jpg */,
 				133CBC5D21F6BF95008722F1 /* TestApi.h */,
 				133CBC5E21F6BF95008722F1 /* TestApi.m */,
@@ -124,11 +132,13 @@
 		1376D4FD21F1A5BA00A24345 /* IOAApiManager */ = {
 			isa = PBXGroup;
 			children = (
-				13504C9F228B088500521D56 /* IOAApiManager.h */,
+				13DF238F22A7CA9700FCCF0E /* IOAResultKeyModel.h */,
+				13DF239022A7CA9700FCCF0E /* IOAResultKeyModel.m */,
 				13504C9C228ABBC900521D56 /* AFJSONResponseSerializer+Addition.h */,
 				13504C9D228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m */,
 				1376D50321F1A5BA00A24345 /* IOAApiHelper.h */,
 				1376D4FE21F1A5BA00A24345 /* IOAApiHelper.m */,
+				13504C9F228B088500521D56 /* IOAApiManager.h */,
 				1376D50521F1A5BA00A24345 /* IOANetworkManager.h */,
 				1376D4FF21F1A5BA00A24345 /* IOANetworkManager.m */,
 				1376D50121F1A5BA00A24345 /* IOARequest.h */,
@@ -269,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DF239122A7CA9700FCCF0E /* IOAResultKeyModel.m in Sources */,
 				13723BEA22A623D500D61510 /* IOAApiHelper.m in Sources */,
 				13504C9E228ABBC900521D56 /* AFJSONResponseSerializer+Addition.m in Sources */,
+				13DF239422A7CB2F00FCCF0E /* IOARequestCus.m in Sources */,
 				133CBC6121F7F4B1008722F1 /* Foundation+Log.m in Sources */,
 				1376D50C21F1A5BA00A24345 /* IOARequest.m in Sources */,
 				1376D4EC21F1A37500A24345 /* ViewController.m in Sources */,

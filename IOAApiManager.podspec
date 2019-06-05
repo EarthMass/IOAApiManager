@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.name         = "IOAApiManager"
   # 版本号
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   # 描述一下项目的作用
   s.summary      = "网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。"
   s.description  = <<-DESC

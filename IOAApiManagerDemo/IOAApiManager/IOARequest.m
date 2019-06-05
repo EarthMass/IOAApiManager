@@ -9,45 +9,6 @@
 #import "IOARequest.h"
 #import "YTKNetworkConfig.h"
 
-
-
-/**
- 自定义 返回模型 特殊处理
- */
-@interface IOAResultKeyModel : NSObject
-
-@property (nonatomic, copy) NSString * successKey;
-@property (nonatomic, copy) NSString * successValue; //成功的字符串 无就是bool
-@property (nonatomic, copy) NSString * errorCodeKey;
-@property (nonatomic, copy) NSString * errorMsgKey;
-
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)new NS_UNAVAILABLE;
-- (instancetype)initWithSuccessKey:(NSString *)successKey
-                      successValue:(NSString *)successValue
-                        errorCodeKey:(NSString *)errorCodeKey
-                        errorMsgKey:(NSString *)errorMsgKey;
-
-@end
-
-@implementation IOAResultKeyModel
-
-- (instancetype)initWithSuccessKey:(NSString *)successKey
-                      successValue:(NSString *)successValue
-                      errorCodeKey:(NSString *)errorCodeKey
-                       errorMsgKey:(NSString *)errorMsgKey {
-    if (self = [super init]) {
-        self.successKey = successKey;
-        self.successValue = successValue;
-        self.errorCodeKey = errorCodeKey;
-        self.errorMsgKey = errorMsgKey;
-    }
-    return self;
-}
-
-@end
-
-
 @interface IOARequest ()
 
 @property (nonatomic, readwrite, assign) NSInteger serverResponseStatusCode;
