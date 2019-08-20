@@ -16,6 +16,23 @@ typedef NS_ENUM(NSUInteger, ServerType) {
 
 @implementation IOAApiHelper
 
++ (void)setRequestLogEnable:(BOOL)enable {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@(enable) forKey:@"IOARequestNeedLogFlag"];
+    [defaults synchronize];
+}
++ (BOOL)requestLogEnable {
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber * enable = [defaults objectForKey:@"IOARequestNeedLogFlag"];
+
+    if (enable) {
+        return [enable boolValue];
+    }
+    return YES;
+}
+
+
 + (void)configNetworkWithBaseUrl:(NSString *)baseUrl {
     
     YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];

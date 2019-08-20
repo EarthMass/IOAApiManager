@@ -11,6 +11,15 @@
 
 
 @interface IOAApiHelper : NSObject
+
+
+/**
+ request log need log， default Log
+ only valid in DEBUG
+ */
++ (void)setRequestLogEnable:(BOOL)enable;
++ (BOOL)requestLogEnable;
+
 //base in YTKNetwork
 
 + (void)configNetworkWithBaseUrl:(NSString *)baseUrl;
@@ -49,4 +58,6 @@
  */
 + (void)saveToken:(NSString *)token;
 + (NSString *)getToken;
+
+
 @end

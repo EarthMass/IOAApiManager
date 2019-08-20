@@ -11,6 +11,9 @@
 #import "IOAResponse.h"
 #import "IOAResultKeyModel.h"
 
+//pod 'MJExtension' ##数据解析
+//pod 'YTKNetwork'  ##网络
+//pod 'HXProgressHUD'
 #import <HXProgressHUD/HXProgress.h>
 #import <MJExtension/MJExtension.h>
 
@@ -21,10 +24,7 @@
 #endif
 
 @class IOARequest;
-@class IOAResultKeyModel;
 typedef void(^IOAResponseResultBlock)(IOAResponse * resp);
-//typedef void(^IOAUploadProgressBlock)(IOARequest *currentApi, NSProgress * progress);
-
 
 typedef NS_ENUM(NSInteger, ResponseStatusType) {
     kResponseStatusTypeRequestError = 0, // 服务后台问题
@@ -73,6 +73,14 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 - (NSString *)serverResponseMessage;
 - (id)requestModel;
 - (NSDictionary *)requestDic;
+
+//资源
+- (NSDictionary *)imgDict;
+- (NSDictionary *)dataDict;
+- (NSArray <NSDictionary <NSString* , id>*> *)imgDictArr;
+- (NSArray <NSDictionary <NSString* , NSData *>*> *)dataDictArr;
+
+
 - (YTKRequestMethod)requestType;
 - (NSString *)uri;
 
@@ -94,9 +102,6 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 
 #pragma mark- ******需要定义独立Api类 方式【YTKNetwork原版使用，一个接口一个类】*********
 #pragma mark 参数设置
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)new NS_UNAVAILABLE;
-
 
 /**
  初始化 请求参数 模型，以及 取到的数据模型
@@ -150,11 +155,13 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
 /**
  请求是否显示加载 便于block快捷设置
  */
-@property (nonatomic, assign) NSNumber * needShowHud;
+@property (nonatomic, strong) NSNumber * needShowHud;
+@property (nonatomic, strong) NSNumber * needShowToast;
 /**
  请求是否需要 验签 便于block快捷设置
  */
-@property (nonatomic, assign) NSNumber * needAuthor;
+@property (nonatomic, strong) NSNumber * needAuthor;
+
 
 - (void)startInBlockWithType:(YTKRequestMethod)type params:(NSDictionary *)dic
                          uri:(NSString *)uri
@@ -167,10 +174,15 @@ typedef NS_ENUM(NSInteger, ResponseStatusType) {
                result:(IOAResponseResultBlock)resultBlock;
 
 
-#pragma mark- 资源上传 可与 上面几种方式混合使用
+#pragma mark- 资源上传 可与 上面几种方式混合使用 在start之前赋值, 同时只有一个有效
+//当个数据
 - (void)uploadImageDic:(NSDictionary <NSString* , UIImage *>* )imgDict;
 - (void)uploadImageDataDic:(NSDictionary <NSString* , NSData *>* )imgDataDict;
 - (void)uploadDataDic:(NSDictionary <NSString* , NSData *>*)dataDic;
+
+//多个数据
+- (void)uploadImageDicArr:(NSArray <NSDictionary <NSString* , UIImage *>* >*)imgDictArr;
+- (void)uploadDataDicArr:(NSArray <NSDictionary <NSString* , NSData *>* >*)dataDicArr;
 
 
 - (BOOL)needAuthorization;

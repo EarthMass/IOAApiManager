@@ -9,6 +9,7 @@
 #import "IOARequest.h"
 #import "YTKNetworkConfig.h"
 
+
 @interface IOARequest ()
 
 @property (nonatomic, readwrite, assign) NSInteger serverResponseStatusCode;
@@ -36,10 +37,14 @@
 #pragma mark- 资源上传
 //保存图片上传数据
 //Key 图片上传的Key
-//Value 图片对象（原始数据）
+//Value 图片对象（原始数据） 当个如果闯入多个@{key: value, key: value}无法保证顺序
 @property(nonatomic, strong) NSDictionary <NSString* , id>* imgDict;
 //文件
 @property(nonatomic, strong) NSDictionary <NSString* , NSData *>* dataDict;
+
+@property(nonatomic, strong) NSArray <NSDictionary <NSString* , id>*> * imgDictArr;
+//文件
+@property(nonatomic, strong) NSArray <NSDictionary <NSString* , NSData *>*> * dataDictArr;
 
 
 @end
@@ -64,6 +69,22 @@
 - (NSDictionary *)requestDic {
     return _requestDic;
 }
+
+- (NSDictionary *)imgDict {
+    return _imgDict;
+}
+
+- (NSDictionary *)dataDict {
+    return _dataDict;
+}
+
+- (NSArray <NSDictionary <NSString* , id>*> *)imgDictArr {
+    return _imgDictArr;
+}
+- (NSArray <NSDictionary <NSString* , NSData *>*> *)dataDictArr {
+    return _dataDictArr;
+}
+
 - (YTKRequestMethod)requestType {
     return _requestType;
 }
@@ -73,19 +94,27 @@
 
 #pragma mark- 定制提示框 提示统一处理[便于快速切换库]
 + (void)showToast:(NSString *)msg {
-
-    [HXProgress showToastWithMsg:msg];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HXProgress showToastWithMsg:msg];
+    });
 }
 + (void)hideToast {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HXProgress dismissHUD];
+    });
 
-    [HXProgress dismissHUD];
 }
 + (void)showLoading:(NSString *)msg {
-    [HXProgress showWithStatus:@"加载中..."];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HXProgress showWithStatus:msg];
+    });
 }
 + (void)hideLoading {
 
-    [HXProgress dismissHUD];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HXProgress dismissHUD];
+    });
 }
 #pragma mark-
 
@@ -168,7 +197,8 @@
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork; // 没网络
         self.serverResponseMessage = [self.class responseMsgWithStatus:self.responseStatusType];
 
-        [IOARequest hideLoading];
+
+        if ([self requestWithLoadingView]) [IOARequest hideLoading];
         [self delegateReturnWithRequest:self];
         
         return;
@@ -177,12 +207,12 @@
 
     [self setCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
 
-         [IOARequest hideLoading];
+        if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         __block typeof(self) blockSelf = weakSelf;
          [blockSelf delegateReturnWithRequest:request];
 
     }  failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-         [IOARequest hideLoading];
+        if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         
         __block typeof(self) blockSelf = weakSelf;
         [blockSelf delegateReturnWithRequest:request];
@@ -242,7 +272,7 @@
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork;
         self.serverResponseMessage = [self.class responseMsgWithStatus:self.responseStatusType];
         if (resultBlock) {
-            [IOARequest hideLoading];
+           if ([self requestWithLoadingView]) [IOARequest hideLoading];
             [self failure:resultBlock];
         }
         return;
@@ -251,13 +281,13 @@
     __weak typeof(self) weakSelf = self;
     [self setCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        [IOARequest hideLoading];
+       if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         __block typeof(self) blockSelf = weakSelf;
         [blockSelf success:resultBlock request:request];
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        [IOARequest hideLoading];
+       if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         if (resultBlock) {
             
             __block typeof(self) blockSelf = weakSelf;
@@ -311,7 +341,7 @@
         self.serverResponseStatusCode = kResponseStatusTypeNoNetwork;
         self.serverResponseMessage = [self.class responseMsgWithStatus:self.responseStatusType];
         if (resultBlock) {
-            [IOARequest hideLoading];
+           if ([self requestWithLoadingView]) [IOARequest hideLoading];
             [self failure:resultBlock];
         }
         return;
@@ -320,13 +350,13 @@
     __weak typeof(self) weakSelf = self;
     [self setCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        [IOARequest hideLoading];
+       if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         __block typeof(self) blockSelf = weakSelf;
         [blockSelf success:resultBlock request:request];
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        [IOARequest hideLoading];
+       if ([weakSelf requestWithLoadingView]) [IOARequest hideLoading];
         if (resultBlock) {
             
             __block typeof(self) blockSelf = weakSelf;
@@ -340,13 +370,13 @@
 #pragma mark- 成功 失败处理，【code的特定 统一处理，提示等】
 - (void)success:(IOAResponseResultBlock)successBlock request:(YTKBaseRequest *)request {
     
-    [IOARequest hideLoading];
+   if ([self requestWithLoadingView]) [IOARequest hideLoading];
     
     IOAResponse * response = [IOAResponse responseWithRequest:(IOARequest *)self];
     if (response.success) {
 
         if (successBlock) {
-            IOALog(@"%@", response.responseOriginObject);
+            if([IOAApiHelper requestLogEnable]) IOALog(@"%@", [self getRequestInfoToStringWithResponse:response]);
             successBlock(response);
         }
         return;
@@ -357,11 +387,12 @@
     IOALog(@"%@", response.responseOriginObject);
     //统一处理 错误 toast
     if (response.responseMessage.length) {
-        [IOARequest showToast:response.responseMessage];
+
+        if ([self requestWithToastView]) [IOARequest showToast:response.responseMessage];
     }
-    
 
     if (successBlock) {
+       if([IOAApiHelper requestLogEnable]) IOALog(@"%@", [self getRequestInfoToStringWithResponse:response]);
         successBlock(response);
     }
 }
@@ -372,6 +403,10 @@
     response.success = NO;
 
     if (failureBlock) {
+        if ([self requestWithToastView] && response.responseMessage.length) {
+            [IOARequest showToast:response.responseMessage];
+        }
+       if([IOAApiHelper requestLogEnable]) IOALog(@"%@", [self getRequestInfoToStringWithResponse:response]);
         failureBlock(response);
     }
     
@@ -420,6 +455,14 @@
     self.dataDict = dataDic;
 }
 
+
+- (void)uploadImageDicArr:(NSArray <NSDictionary <NSString* , UIImage *>* >*)imgDictArr {
+    self.imgDictArr = imgDictArr;
+}
+- (void)uploadDataDicArr:(NSArray <NSDictionary <NSString* , NSData *>* >*)dataDicArr {
+    self.dataDictArr = dataDicArr;
+}
+
 /*!
  *  @brief 多图上传
  *
@@ -439,7 +482,7 @@
                 if ([upload isKindOfClass:UIImage.class]) {
                     //进行图片压缩
 //                    upload = [upload compress];
-                    NSData *data = UIImageJPEGRepresentation(upload, 0.9f);
+                    NSData *data = UIImageJPEGRepresentation(upload, 0.6f);
                     
                     NSString *name = [NSString stringWithFormat:@"%@.jpeg",key];
                     NSString *type = @"image/jpeg"; // @"png/jpeg/jpg";
@@ -457,9 +500,9 @@
                 
             }
             
-            weakSelf.imgDict = nil;
+
         };
-        return nil;
+
     }
     if(self.dataDict.allKeys.count){
         return ^(id<AFMultipartFormData> formData) {
@@ -479,11 +522,73 @@
                 
             }
             
-            weakSelf.dataDict = nil;
         };
-        return nil;
+
+    }
+    if (self.imgDictArr.count) {
+
+        return ^(id<AFMultipartFormData> formData) {
+
+            for (NSInteger idx = 0 ; idx < weakSelf.imgDictArr.count; idx ++) {
+
+                NSDictionary <NSString* , id>* tmp = weakSelf.imgDictArr[idx];
+                for (NSInteger jdx = 0 ; jdx < tmp.allKeys.count; jdx ++) {
+
+                    NSString* key = tmp.allKeys[jdx];
+                    UIImage* upload = tmp[key];
+
+                    if ([upload isKindOfClass:UIImage.class]) {
+                        //进行图片压缩
+                        //                    upload = [upload compress];
+                        NSData *data = UIImageJPEGRepresentation(upload, 0.6f);
+
+                        NSString *name = [NSString stringWithFormat:@"%@.jpeg",key];
+                        NSString *type = @"image/jpeg"; // @"png/jpeg/jpg";
+                        if (data) {
+                            [formData appendPartWithFileData:data name:key fileName:name mimeType:type];
+                        }
+                    } else if ([upload isKindOfClass:NSData.class]) {
+
+                        NSString *name = [NSString stringWithFormat:@"%@.jpeg",key];
+                        NSString *type = @"image/jpeg"; // @"png/jpeg/jpg";
+                        if (upload) {
+                            [formData appendPartWithFileData:(NSData *)upload name:key fileName:name mimeType:type];
+                        }
+                    }
+
+                }
+            }
+
+        };
+    }
+    if (self.dataDictArr.count) {
+
+        return ^(id<AFMultipartFormData> formData) {
+
+            for (NSInteger idx = 0 ; idx < weakSelf.dataDictArr.count; idx ++) {
+
+                NSDictionary <NSString* , NSData *>* tmp = weakSelf.imgDictArr[idx];
+
+                for (NSInteger jdx = 0 ; jdx < tmp.allKeys.count; jdx ++) {
+
+                    NSString * key = tmp.allKeys[jdx];
+                    NSData * upload = tmp[key];
+                    if (upload) {
+
+                        NSString *name = key;
+                        NSString *type = @"application/octet-stream";
+                        [formData appendPartWithFileData:upload name:key fileName:name mimeType:type];
+                    }
+
+                }
+            }
+
+        };
+
     }
     
+
+
     return nil;
 }
 
@@ -493,10 +598,16 @@
     return self.needShowHud?[self.needShowHud boolValue]:YES;
 }
 
+- (BOOL)requestWithToastView {
+    return self.needShowToast?[self.needShowToast boolValue]:YES;
+}
+
+
 //自定义是否需要 token
 - (BOOL)needAuthorization {
     return self.needAuthor?[self.needAuthor boolValue]:YES;
 }
+
 
 #pragma mark 状态码是以 请求返回的code值来判断，还是通过 回传的参数某个值来判断 ---->>response code judge<<-----
 - (NSArray <IOAResultKeyModel *> *)responseSuccessKeyAndErrorKeys {
@@ -693,7 +804,7 @@
             return @"已是最新数据";
             break;
         case kResponseStatusTypeExpiryToken:
-            return @"设备在别的地方登录";
+            return @"您的账号在其他设备登录，请重新登录";
             break;
         case kResponseStatusTypeTimeout:
             return @"服务器忙，请稍后重试";
@@ -713,6 +824,91 @@
             return @"未知错误，请稍后重试";
             break;
     }
+}
+
+#pragma mark- Other Log
+- (NSString *)getRequestInfoToStringWithResponse:(IOAResponse *)resp {
+
+    NSString * requestInfoStr = @"";
+
+    NSString * resouce = nil;
+    NSString * uri = nil;
+    if (self.uri) {
+        uri = self.uri;
+    } else {
+        uri = [self requestUrl];
+    }
+
+
+
+    if (self.baseUrl.length && ![self.uri hasPrefix:@"http"]) {
+        resouce = [self.baseUrl stringByAppendingPathComponent:uri];
+    } else {
+        NSString * baseUrl = self.baseUrl.length?self.baseUrl:[YTKNetworkConfig sharedConfig].baseUrl;
+        if (![self.uri hasPrefix:@"http"]) {
+            resouce = [baseUrl stringByAppendingPathComponent:uri];
+        } else {
+            resouce = uri;
+        }
+
+    }
+    NSMutableDictionary * requestInfo = [NSMutableDictionary dictionary];
+
+    if (self.requestArgument) {
+        if ([self.requestArgument isKindOfClass:[NSDictionary class]]) {
+            requestInfo = [NSMutableDictionary dictionaryWithDictionary:self.requestArgument];
+
+        } else {
+
+            NSArray * arr = self.requestArgument;
+
+            if (arr.count) {
+                requestInfo = [NSMutableDictionary dictionaryWithDictionary:@{@"paramDic":[arr mj_JSONString]}];
+            }
+        }
+
+    } else {
+        requestInfo = [NSMutableDictionary dictionaryWithDictionary:self.requestDic?self.requestDic:[self.requestModel mj_JSONObject]];;
+    }
+
+    if (self.imgDict.allKeys.count) {
+        for (NSString * fileKey in self.imgDict.allKeys) {
+            [requestInfo setObject:@"maybe [file part]" forKey:fileKey?:@"file"];
+        }
+    }
+    if (self.dataDict.allKeys.count) {
+        for (NSString * fileKey in self.dataDict.allKeys) {
+            [requestInfo setObject:@"maybe [file part]" forKey:fileKey?:@"file"];
+        }
+    }
+    if (self.dataDictArr.count ) {
+        for (NSDictionary <NSString *,NSData *> * dic in _dataDictArr) {
+            if (dic.allKeys.count) {
+                for (NSString * fileKey in dic.allKeys) {
+                    [requestInfo setObject:@"maybe [file part]" forKey:fileKey?:@"file"];
+                }
+            }
+        }
+
+    }
+    if (self.imgDictArr.count ) {
+        for (NSDictionary <NSString *,NSData *> * dic in _imgDictArr) {
+            if (dic.allKeys.count) {
+                for (NSString * fileKey in dic.allKeys) {
+                    [requestInfo setObject:@"maybe [file part]" forKey:fileKey?:@"file"];
+                }
+            }
+        }
+
+    }
+
+   requestInfoStr = [requestInfoStr stringByAppendingString:[NSString stringWithFormat:@"requestUrl:%@ \n",resouce]];
+   requestInfoStr = [requestInfoStr stringByAppendingString:[NSString stringWithFormat:@"requestHead:%@ \n",[self requestHeaderFieldValueDictionary]]];
+   requestInfoStr = [requestInfoStr stringByAppendingString:[NSString stringWithFormat:@"requestInfo:%@ \n",requestInfo]];
+   requestInfoStr = [requestInfoStr stringByAppendingString:[NSString stringWithFormat:@"responseInfo:%@ \n",[resp.responseOriginObject mj_JSONString]]];
+
+
+    return requestInfoStr;
 }
 
 @end
