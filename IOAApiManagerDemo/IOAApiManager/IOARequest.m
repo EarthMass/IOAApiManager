@@ -567,7 +567,7 @@
 
             for (NSInteger idx = 0 ; idx < weakSelf.dataDictArr.count; idx ++) {
 
-                NSDictionary <NSString* , NSData *>* tmp = weakSelf.imgDictArr[idx];
+                NSDictionary <NSString* , NSData *>* tmp = weakSelf.dataDictArr[idx];
 
                 for (NSInteger jdx = 0 ; jdx < tmp.allKeys.count; jdx ++) {
 
