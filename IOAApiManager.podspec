@@ -15,7 +15,9 @@ Pod::Spec.new do |s|
   # 描述一下项目的作用
   s.summary      = "网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。"
   s.description  = <<-DESC
+  
                       网络请求框架对 YTKNetwork二次封装，使用方式多样，简单。 Easy
+
                       
                    DESC
 
